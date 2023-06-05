@@ -1,7 +1,8 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import linkedIn from "../assets/linkedin_profile.png";
-import linkedInLogo from "../assets/linkedin_logo.png";
+import edit_profile from "../assets/edit_profile.png";
+import pastIcon from "../assets/pastIcon.png"
 
 const Profile = () => {
   return (
@@ -37,50 +38,51 @@ const Profile = () => {
             <div className="landing-top-image-container">
               <img src={linkedIn} className="landing-image" alt="waste graphic 3" />
               <div className="linkedin-logo">
-                <img src={linkedInLogo} alt="LinkedIn Logo" />
+                <img src={edit_profile} alt="Edit Profile" />
               </div>
             </div>
           </Link>
         </div>
       </div>
-      <div className="landing-tiles-container">
+      <div className="landing-middle-container">
         <div className="landing-past-title">Past Articles:</div>
+        <img src={pastIcon} alt="rewind icon" className="past-icon"></img>
       </div>
       <div className="landing-tiles-container">
-        <Link to='/about'>
+        <Link to='https://www.cnn.com/'>
           <div className="landing-tile">
-            <div className="landing-tile-text">About Me</div>
+            <div className="landing-tile-text">CNN</div>
           </div>
         </Link>
-        <Link to='/experience'>
+        <Link to='https://www.msnbc.com/'>
         <div className="landing-tile">
-          <div className="landing-tile-text">Professional Experience</div>
+          <div className="landing-tile-text">MSNBC</div>
         </div>
         </Link>
-        <Link to='/projects'>
+        <Link to='https://www.washingtonpost.com/'>
         <div className="landing-tile">
-          <div className="landing-tile-text">Personal Projects</div>
+          <div className="landing-tile-text">Washington Post</div>
         </div>
         </Link>
-        <Link to='/coursework'>
+        <Link to='https://www.nytimes.com/'>
         <div className="landing-tile">
-          <div className="landing-tile-text">Relevant Coursework</div>
+          <div className="landing-tile-text">New York Times</div>
         </div>
         </Link>
-        <Link to='/leadership'>
+        <Link to='https://www.wsj.com/'>
         <div className="landing-tile">
-          <div className="landing-tile-text">Leadership</div>
+          <div className="landing-tile-text">Wall Street Journal</div>
         </div>
         </Link>
-        <Link to='/awards'>
+        <Link to='https://www.theguardian.com/us'>
         <div className="landing-tile">
-          <div className="landing-tile-text">Awards</div>
+          <div className="landing-tile-text">The Guardian</div>
         </div>
         </Link>
       </div>
       <div className="landing-top-container">
         <div className="landing-top-content">
-          <div className="landing-bottom-text">If you would like to learn more about me and my work, feel free to contact me directly or continue to explore this site.</div>
+          <div className="landing-bottom-text">If you would like to learn more about learn layout, feel free to contact help@learnlayout.com directly or continue to explore this site.</div>
         </div>
       </div>
     </div>

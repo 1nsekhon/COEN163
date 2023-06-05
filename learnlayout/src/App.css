@@ -2,7 +2,15 @@
 .company-logo {
   margin: 5px 5px 5px 5px;
   height: calc(40px + 1vmin);
-  width: calc(32px + 1vmin);
+  width: calc(45px + 1vmin);
+  border-radius: 12px;
+}
+
+.past-icon {
+  height: 60px;
+  width: 60px;
+  margin-top: 30px;
+  margin-right: 100px;
 }
 
 h1 {
@@ -12,6 +20,10 @@ h1 {
 h2 {
   color:#012622;
   font-style: italic;
+}
+
+a {
+  text-decoration: none;
 }
 
 /* NAVBAR */
@@ -135,6 +147,7 @@ h2 {
 }
 
 .landing-top-container {
+  justify-content: center;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -148,10 +161,29 @@ h2 {
   margin: 50px 30px 15px 30px;
 }
 
+.landing-middle-container {
+  background-color: #ffffff;
+  width: 80%;
+  min-width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
 .landing-middle-content {
   display: flex;
   justify-content: left;
+  flex-direction: wrap;
   margin: 15px 30px 15px 30px;
+}
+
+.landing-break-content {
+  display: flex;
+  justify-content: left;
+  flex-direction: wrap;
+  margin: 60px 30px 30px 30px;
 }
 
 .landing-bottom-content {
@@ -207,12 +239,19 @@ h2 {
   margin-left: 30px;
   margin-right: 30px;
   /* max-width: 550px; */
-  width: 70%;
+  width: 60%;
 }
 
 .landing-bottom-text {
-  color: #003b36;
+  color:#3d3d3d;
   font-size: calc(10px + 1vmin);
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.landing-r-text {
+  color:#3d3d3d;
+  font-size: calc(8px + 1vmin);
   margin-left: 30px;
   margin-right: 30px;
 }
@@ -300,7 +339,7 @@ h2 {
   width: 350px;
   height: 250px;
   border-radius: 20px;
-  border: 1px solid #3B1F2B;
+  border: 2px solid #8499B1;
   justify-content: center;
   align-items: center;
   background-color: transparent;
@@ -315,7 +354,7 @@ h2 {
     width: 300px;
     height: 200px;
     border-radius: 20px;
-    border: 1px solid #3B1F2B;
+    border: 1px solid #8499B1;
     justify-content: center;
     align-items: center;
     background-color: transparent;
@@ -326,7 +365,7 @@ h2 {
 
 .landing-tile:hover {
   transform: translate(-10px, -10px);
-  box-shadow: 10px 10px 0 0 #3B1F2B;
+  box-shadow: 10px 10px 0 0 #8499B1;
   background-color: transparent;
 }
 
@@ -338,7 +377,7 @@ h2 {
   width: 100%;
   height: 100%;
   border-radius: 20px;
-  border: 1px solid #3B1F2B;
+  border: 1px solid #8499B1;
   opacity: 0;
   transition: opacity 0.3s;
 }
@@ -350,11 +389,15 @@ h2 {
 .landing-tile-text {
   position: absolute;
   display: flex;
-  color:#003b36;
+  color:#3d3d3d;
   font-size: calc(26px + 1vmin);
   font-weight: bolder;
   max-width: 300px;
   text-align: center;
+}
+
+.landing-tile-content {
+  max-width: 300px;
 }
 
 .landing-left {
@@ -377,6 +420,43 @@ h2 {
   align-items: center;
 }
 
+.landing-extension-window {
+  justify-content: right;
+  margin: 20px 20px 50px 20px;
+  width: 550px;
+  height: auto;
+  display: flex;
+}
+
+.landing-extension {
+  margin: 30px 30px 50px 30px;
+  width: 300px;
+  height: auto;
+  display: flex;
+}
+
+.landing-install {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #8499B1;
+  border-radius: 12px;
+  width: fit-content;
+  color: #ffffff;
+  font-size: xx-large;
+  font-weight: 500;
+  height: 100px;
+  width: 300px;
+  margin: 30px 30px 30px 60px;
+}
+
+.landing-install:hover {
+  background-color: #ffffff; /* Inverted background color on hover */
+  color: #8499B1; /* Inverted text color on hover */
+  border: 2px solid #8499B1;
+  box-sizing: border-box;
+}
+
 /* ABOUT ME */
 .about-top-container {
   display: flex;
@@ -394,6 +474,67 @@ h2 {
     width: 100%;
     margin: 3% 0px 3% 0px;
   }
+}
+
+.landing-learning-style-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1000px;
+  height: 300px;
+  width: 300px;
+  color: #ffffff;
+  font-size: xx-large;
+  font-weight: 500;
+  margin: 30px 40px 30px 40px;
+  text-decoration: none;
+}
+
+.landing-learning-style-card:nth-child(1):hover {
+  background-color: #ffffff; /* Inverted background color on hover */
+  color: #963D5A; /* Inverted text color on hover */
+  border: 2px solid #963D5A;
+  box-sizing: border-box;
+}
+
+.landing-learning-style-card:nth-child(1) {
+  background-color: #963D5A;
+}
+
+.landing-learning-style-card:nth-child(2):hover {
+  background-color: #ffffff; /* Inverted background color on hover */
+  color: #8499B1; /* Inverted text color on hover */
+  border: 2px solid #8499B1;
+  box-sizing: border-box;
+}
+
+.landing-learning-style-card:nth-child(2) {
+  background-color: #8499B1;
+}
+
+.landing-learning-style-card:nth-child(3):hover {
+  background-color: #ffffff; /* Inverted background color on hover */
+  color: #4C191B; /* Inverted text color on hover */
+  border: 2px solid #4C191B;
+  box-sizing: border-box;
+}
+
+.landing-learning-style-card:nth-child(3) {
+  background-color: #4C191B;
+}
+
+.landing-directions-title {
+  color: #3D3D3D;
+  font-size: xx-large;
+  font-weight: 500;
+  margin: 20px 20px 20px 0px;
+}
+
+.landing-directions {
+  color: #3D3D3D;
+  font-size: x-large;
+  font-weight: 400;
+  margin: 20px 20px 20px 0px;
 }
 
 /* EXPERIENCE */
@@ -416,6 +557,7 @@ h2 {
 .exp-left {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   min-width: 768px;
 }
 
@@ -424,6 +566,15 @@ h2 {
   justify-content: center;
   align-items: center;
   min-width: 40%;
+  flex-direction: column;
+}
+
+.exp-right-nc {
+  display: flex;
+  justify-content: center;
+  text-align: left;
+  min-width: 40%;
+  flex-direction: column;
 }
 
 /* FAQ */
@@ -431,6 +582,7 @@ h2 {
   display: flex;
   flex-direction: column;
   width: 85vw;
+  margin: 50px 0px 0px 0px;
 }
 
 .accordion-item {
@@ -516,4 +668,51 @@ h2 {
   max-height: 90%;
   overflow: auto;
   color:#3B1F2B;
+}
+
+
+/* RESOURCES */
+.resources-learning-style-card-1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1000px;
+  background-color: #963D5A;
+  height: 300px;
+  width: 300px;
+  color: #ffffff;
+  font-size: xx-large;
+  font-weight: 500;
+  margin: 30px 40px 30px 40px;
+  text-decoration: none;
+}
+
+.resources-learning-style-card-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1000px;
+  background-color: #8499B1;
+  height: 300px;
+  width: 300px;
+  color: #ffffff;
+  font-size: xx-large;
+  font-weight: 500;
+  margin: 30px 40px 30px 40px;
+  text-decoration: none;
+}
+
+.resources-learning-style-card-3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1000px;
+  background-color: #4C191B;
+  height: 300px;
+  width: 300px;
+  color: #ffffff;
+  font-size: xx-large;
+  font-weight: 500;
+  margin: 30px 40px 30px 40px;
+  text-decoration: none;
 }

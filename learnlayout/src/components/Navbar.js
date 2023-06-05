@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../App.css';
-import LSV from '../assets/LSV.png';
+import LSV from '../assets/LearnLayoutLogo.png';
 import { Link } from 'react-router-dom';
 
 const pages = [
