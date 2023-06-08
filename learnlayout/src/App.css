@@ -203,6 +203,9 @@ a {
 }
 
 .landing-subtitle {
+  display: flex;
+  flex-direction: row;
+  flex-wrap:wrap;
   color:#4C191B;
   font-size: calc(30px + 1vmin);
   font-weight: 450;
@@ -264,7 +267,7 @@ a {
 } */
 
 .landing-top-image-container {
-  width: 100%;
+  width: 90%;
   min-width: 200px;
   border-radius: 1000px;
   margin: 30px;
@@ -273,7 +276,7 @@ a {
 }
 
 .landing-image {
-  display: block;
+  display: flex;
   width: 100%;
   height: auto;
   transition: filter 0.3s;
@@ -281,8 +284,8 @@ a {
 
 @media (max-width: 768px) {
   .landing-image {
-    display: block;
-    width: 90%;
+    display: flex;
+    width: 100%;
     height: auto;
     transition: filter 0.3s;
   }
@@ -299,6 +302,7 @@ a {
   transform: translate(-50%, -50%);
   opacity: 0;
   transition: opacity 0.3s;
+  cursor: pointer;
 }
 
 .landing-top-image-container:hover .linkedin-logo {
@@ -715,4 +719,105 @@ a {
   font-weight: 500;
   margin: 30px 40px 30px 40px;
   text-decoration: none;
+}
+
+/* PROFILE */
+.edit-icon-container {
+  display: flex;
+  flex-wrap: wrap;
+  height: auto;
+  min-width: 200px;
+  padding-left: 20px;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+  .edit-icon-container {
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+    min-width: 200px;
+    padding: 20px;
+    cursor: pointer;
+  }
+}
+
+.edit-icon {
+  display: flex;
+  width: 50px;
+  height:auto;
+  margin-right: auto;
+}
+
+.slide-form-container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+  margin-left: calc(100% - 220px);
+  z-index: 10;
+  justify-content: flex-end;
+  background: #dddddd;
+  padding: 10px;
+  border-radius: 12px;
+}
+
+@media only screen and (max-width: 600px) {
+  .slide-form-container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    margin-left: calc(100% - 230px);
+    z-index: 10;
+    justify-content: flex-end;
+    background: #dddddd;
+    padding: 10px;
+    border-radius: 12px;
+  }
+}
+
+.slider-settings-text {
+  margin-top: 5px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.slider-submission {
+  margin-top: 5px;
+  border-radius: 12px;
+  border: solid;
+  border-color: #3d3d3d;
+  font-size: medium;
+}
+
+/* The slider itself */
+.slider {
+  margin: 0px 0px 0px 0px;
+  appearance: none;
+  width: 180px;
+  height: 15px;
+  border-radius: 5px;  
+  background: #ffffff;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%; 
+  background: #3d3d3d;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #3d3d3d;
+  cursor: pointer;
 }
