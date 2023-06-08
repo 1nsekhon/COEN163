@@ -3,15 +3,20 @@ import {Link} from "react-router-dom";
 import linkedIn from "../assets/linkedin_profile.png";
 import edit_profile from "../assets/edit_profile.png";
 import pastIcon from "../assets/pastIcon.png"
+import { useLocation } from 'react-router-dom';
 
-const Profile = ({readingRes, visualRes, auditoryRes}) => {
+
+const Profile = () => {
+  const location = useLocation();
+  const { readingRes, visualRes, auditoryRes } = location.state;
+
   console.log(readingRes);
   console.log(visualRes);
   console.log(auditoryRes);
   
-    const [visual, setVisual] = useState(visualRes);
-    const [reading, setReading] = useState(readingRes);
-    const [auditory, setAuditory] = useState(auditoryRes);
+  const [visual, setVisual] = useState(visualRes || ""); 
+  const [reading, setReading] = useState(readingRes || ""); 
+  const [auditory, setAuditory] = useState(auditoryRes || "");
     const [username, setUsername] = useState("LUCAS VORON");
     const [email, setEmail] = useState("lvoron@scu.edu");
   

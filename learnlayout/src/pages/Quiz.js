@@ -4,6 +4,7 @@ import appGame from "../assets/GarbageToss.png";
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+
 const Quiz = () => {
         const [answers, setAnswers] = useState([]);
         const navigate = useNavigate();
@@ -53,6 +54,7 @@ const Quiz = () => {
                   auditoryRes: percentages.auditory
                 }
               });
+              
           };
 
   return (
@@ -105,7 +107,7 @@ const Quiz = () => {
                         type="radio"
                         name="question2"
                         value="a"
-                        onChange={() => handleAnswerChange(0, 'a')}
+                        onChange={() => handleAnswerChange(1, 'a')}
                         />
                         (A) Write notes or create written summaries?
                     </label>
@@ -114,7 +116,7 @@ const Quiz = () => {
                         type="radio"
                         name="question2"
                         value="b"
-                        onChange={() => handleAnswerChange(0, 'b')}
+                        onChange={() => handleAnswerChange(1, 'b')}
                         />
                         (B) Recite or discuss the information out loud?
                     </label>
@@ -123,7 +125,7 @@ const Quiz = () => {
                         type="radio"
                         name="question2"
                         value="c"
-                        onChange={() => handleAnswerChange(0, 'c')}
+                        onChange={() => handleAnswerChange(1, 'c')}
                         />
                         (C) Visualize images or diagrams in your mind?
                     </label>                    
@@ -137,7 +139,7 @@ const Quiz = () => {
                         type="radio"
                         name="question3"
                         value="a"
-                        onChange={() => handleAnswerChange(0, 'a')}
+                        onChange={() => handleAnswerChange(2, 'a')}
                         />
                         (A) Read and highlight the textbook or study guide?
                     </label>
@@ -146,7 +148,7 @@ const Quiz = () => {
                         type="radio"
                         name="question3"
                         value="b"
-                        onChange={() => handleAnswerChange(0, 'b')}
+                        onChange={() => handleAnswerChange(2, 'b')}
                         />
                         (B) Participate in study groups or explain concepts to others?
                     </label>
@@ -155,7 +157,7 @@ const Quiz = () => {
                         type="radio"
                         name="question3"
                         value="c"
-                        onChange={() => handleAnswerChange(0, 'c')}
+                        onChange={() => handleAnswerChange(2, 'c')}
                         />
                         (C) Use flashcards, mind maps, or other visual study tools?
                     </label>                    
@@ -169,7 +171,7 @@ const Quiz = () => {
                         type="radio"
                         name="question4"
                         value="a"
-                        onChange={() => handleAnswerChange(0, 'a')}
+                        onChange={() => handleAnswerChange(3, 'a')}
                         />
                         (A) Analyze and think through the steps silently in your head?
                     </label>
@@ -178,7 +180,7 @@ const Quiz = () => {
                         type="radio"
                         name="question4"
                         value="b"
-                        onChange={() => handleAnswerChange(0, 'b')}
+                        onChange={() => handleAnswerChange(3, 'b')}
                         />
                         (B) Talk through the problem or discuss it with others?
                     </label>
@@ -187,7 +189,7 @@ const Quiz = () => {
                         type="radio"
                         name="question4"
                         value="c"
-                        onChange={() => handleAnswerChange(0, 'c')}
+                        onChange={() => handleAnswerChange(3, 'c')}
                         />
                         (C) Sketch diagrams or use visual representations to understand it?
                     </label>                    
@@ -201,7 +203,7 @@ const Quiz = () => {
                         type="radio"
                         name="question5"
                         value="a"
-                        onChange={() => handleAnswerChange(0, 'a')}
+                        onChange={() => handleAnswerChange(4, 'a')}
                         />
                         (A) Visualize the route or landmarks in your mind?
                     </label>
@@ -210,7 +212,7 @@ const Quiz = () => {
                         type="radio"
                         name="question5"
                         value="b"
-                        onChange={() => handleAnswerChange(0, 'b')}
+                        onChange={() => handleAnswerChange(4, 'b')}
                         />
                         (B) Repeat the directions out loud or listen to audio instructions?
                     </label>
@@ -219,7 +221,7 @@ const Quiz = () => {
                         type="radio"
                         name="question5"
                         value="c"
-                        onChange={() => handleAnswerChange(0, 'c')}
+                        onChange={() => handleAnswerChange(4, 'c')}
                         />
                         (C) Read a map or written instructions carefully?
                     </label>                    
