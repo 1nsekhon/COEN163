@@ -1,77 +1,238 @@
 import React from "react";
 import appHome from "../assets/WasteAwayHome.png";
 import appGame from "../assets/GarbageToss.png";
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Quiz = () => {
+        const [answers, setAnswers] = useState([]);
+        const navigate = useNavigate();
+      
+        const handleAnswerChange = (questionIndex, answer) => {
+          const newAnswers = [...answers];
+          newAnswers[questionIndex] = answer;
+          setAnswers(newAnswers);
+        };
+      
+        const handleSubmit = (event) => {
+            event.preventDefault();
+            
+            // Calculate learning style percentages based on answers
+            const totalQuestions = 5;
+            const answerCounts = {
+              visual: 0,
+              auditory: 0,
+              readingWriting: 0
+            };
+          
+            answers.forEach((answer) => {
+              if (answer === 'a') {
+                answerCounts.readingWriting++;
+              } else if (answer === 'b') {
+                answerCounts.auditory++;
+              } else if (answer === 'c') {
+                answerCounts.visual++;
+              }
+            });
+          
+            const percentages = {
+              visual: (answerCounts.visual / totalQuestions) * 100,
+              auditory: (answerCounts.auditory / totalQuestions) * 100,
+              readingWriting: (answerCounts.readingWriting / totalQuestions) * 100
+            };
+          
+            // Display results or navigate to results page
+            console.log('Submit clicked');
+            console.log('Answers:', answers);
+            console.log('Learning Style Percentages:', percentages);
+
+            navigate('/profile', { 
+                state: {
+                  readingRes: percentages.readingWriting,
+                  visualRes: percentages.visual,
+                  auditoryRes: percentages.auditory
+                }
+              });
+          };
+
   return (
     <div className="landing-content-area">
       <div className="landing-top-container">
-        <h1>Mobile App Home:</h1>
-        <div className="landing-middle-content">
-            <div className="landing-right">
-            <img src={appHome} className="landing-top-image-container" alt="app home page" />
-            </div>
-            <div className="landing-bottom-text">
-                <div className="tutorial-text">
-                    Open the WasteAway application on your mobile device and navigate to the home page.
-                </div>
-                <div className="tutorial-text">
-                    Take a moment to familiarize yourself with the layout of the home page. You'll notice that it extends vertically, allowing you to scroll down to see more content.
-                </div>
-                <div className="tutorial-text">
-                    At the top of the home page, you'll see a search bar. You can use this search bar to search for specific study materials, such as flashcards or quizzes, by typing in keywords or phrases.
-                </div>
-                <div className="tutorial-text">
-                    Below the search bar, you'll see several categories, such as "Games," "Study Sets," and "Recommended". You can use the horizontal scroll feature to browse through these categories and see more study materials related to each topic.
-                </div>
-                <div className="tutorial-text">
-                    To access a study set, game, or flashcard deck, simply tap on the item you're interested in. This will take you to a new page where you can begin studying or playing.
-                </div>
-                <div className="tutorial-text">
-                    As you explore the home page, take note of any study materials that catch your interest. You can save these materials for later by adding them to your favorites list, which you can access by tapping the heart icon in the top right corner of the screen.
-                </div>
-                <div className="tutorial-text">
-                    When you're ready to continue studying, simply return to the home page by tapping the "Home" button in the bottom left corner of the screen. From here, you can continue browsing study materials, playing games, or reviewing flashcards.
-                </div>
-            </div>
-        </div>
-        <div>
-            <h1>Waste Toss Game:</h1>
+        <div className ="quizTitle">
+        <h1>Learning Style Assesment</h1>
+        <h3>Answer the five questions below to determine whether you have a visual, auditory, or reading/writing learning style.</h3>
         </div>
         <div className="landing-middle-content">
-            <div className="landing-right">
-                <img src={appGame} className="landing-top-image-container" alt="app game page" />
-            </div>
             <div className="landing-bottom-text">
-                <div className="tutorial-text">
-                    Open the WasteAway application on your mobile device and navigate to the waste toss game.
+                <div className="quizQuestion">
+                    1. When learning a new concept, do you prefer to:
                 </div>
-                <div className="tutorial-text">
-                    Take a moment to familiarize yourself with the game's layout. You'll notice that there is a timer in the top middle of the screen, which shows you how much time you have left to play.
+                <div className="quizAnswer">
+                    <label>
+                        <input
+                        type="radio"
+                        name="question1"
+                        value="a"
+                        onChange={() => handleAnswerChange(0, 'a')}
+                        />
+                        (A) Read books or articles?
+                    </label>
+                    <label>
+                        <input
+                        type="radio"
+                        name="question1"
+                        value="b"
+                        onChange={() => handleAnswerChange(0, 'b')}
+                        />
+                        (B) Discuss it with others or listen to lectures?
+                    </label>
+                    <label>
+                        <input
+                        type="radio"
+                        name="question1"
+                        value="c"
+                        onChange={() => handleAnswerChange(0, 'c')}
+                        />
+                        (C) Use diagrams, charts, or visual aids?
+                    </label>   
+                </div>                 
+                <div className="quizQuestion">
+                    2. When remembering information, do you find it easier to:
                 </div>
-                <div className="tutorial-text">
-                    You'll also notice a variety of waste items that can appear on the screen, such as paper cups, plastic bottles, and food wrappers. Your goal is to toss as many of these items into the correct bin as possible before the timer runs out.
+                <div className="quizAnswer">
+                    <label>
+                        <input
+                        type="radio"
+                        name="question2"
+                        value="a"
+                        onChange={() => handleAnswerChange(0, 'a')}
+                        />
+                        (A) Write notes or create written summaries?
+                    </label>
+                    <label>
+                        <input
+                        type="radio"
+                        name="question2"
+                        value="b"
+                        onChange={() => handleAnswerChange(0, 'b')}
+                        />
+                        (B) Recite or discuss the information out loud?
+                    </label>
+                    <label>
+                        <input
+                        type="radio"
+                        name="question2"
+                        value="c"
+                        onChange={() => handleAnswerChange(0, 'c')}
+                        />
+                        (C) Visualize images or diagrams in your mind?
+                    </label>                    
                 </div>
-                <div className="tutorial-text">
-                    To toss an item, simply swipe up on the screen with your finger. You can adjust the angle and speed of your swipe to aim the item more accurately.
+                <div className="quizQuestion">
+                    3. When studying for an exam, do you tend to:
                 </div>
-                <div className="tutorial-text">
-                    Each time you successfully toss an item into the right bin, you'll earn points. The more items you toss, the higher your score will be.
+                <div className="quizAnswer">
+                    <label>
+                        <input
+                        type="radio"
+                        name="question3"
+                        value="a"
+                        onChange={() => handleAnswerChange(0, 'a')}
+                        />
+                        (A) Read and highlight the textbook or study guide?
+                    </label>
+                    <label>
+                        <input
+                        type="radio"
+                        name="question3"
+                        value="b"
+                        onChange={() => handleAnswerChange(0, 'b')}
+                        />
+                        (B) Participate in study groups or explain concepts to others?
+                    </label>
+                    <label>
+                        <input
+                        type="radio"
+                        name="question3"
+                        value="c"
+                        onChange={() => handleAnswerChange(0, 'c')}
+                        />
+                        (C) Use flashcards, mind maps, or other visual study tools?
+                    </label>                    
                 </div>
-                <div className="tutorial-text">
-                    Be careful not to toss items into the wrong bin, as this will result in a penalty to your score.
+                <div className="quizQuestion">
+                    4. When solving a problem, do you prefer to:
                 </div>
-                <div className="tutorial-text">
-                    If you need to exit the game before the timer runs out, simply tap the "Exit" button in the top left corner of the screen. This will take you back to the main menu.
+                <div className="quizAnswer">
+                    <label>
+                        <input
+                        type="radio"
+                        name="question4"
+                        value="a"
+                        onChange={() => handleAnswerChange(0, 'a')}
+                        />
+                        (A) Analyze and think through the steps silently in your head?
+                    </label>
+                    <label>
+                        <input
+                        type="radio"
+                        name="question4"
+                        value="b"
+                        onChange={() => handleAnswerChange(0, 'b')}
+                        />
+                        (B) Talk through the problem or discuss it with others?
+                    </label>
+                    <label>
+                        <input
+                        type="radio"
+                        name="question4"
+                        value="c"
+                        onChange={() => handleAnswerChange(0, 'c')}
+                        />
+                        (C) Sketch diagrams or use visual representations to understand it?
+                    </label>                    
                 </div>
-                <div className="tutorial-text">
-                    When the timer runs out, your game will end and your score will be displayed on the screen. If you scored high enough, you may be able to add your name to the game's high score list.
+                <div className="quizQuestion">
+                    5. When recalling directions or locations, do you typically:
                 </div>
-                <div className="tutorial-text">
-                    If you'd like to play again, simply tap the "Play Again" button on the screen. This will reset the game and allow you to try to beat your previous score.
+                <div className="quizAnswer">
+                    <label>
+                        <input
+                        type="radio"
+                        name="question5"
+                        value="a"
+                        onChange={() => handleAnswerChange(0, 'a')}
+                        />
+                        (A) Visualize the route or landmarks in your mind?
+                    </label>
+                    <label>
+                        <input
+                        type="radio"
+                        name="question5"
+                        value="b"
+                        onChange={() => handleAnswerChange(0, 'b')}
+                        />
+                        (B) Repeat the directions out loud or listen to audio instructions?
+                    </label>
+                    <label>
+                        <input
+                        type="radio"
+                        name="question5"
+                        value="c"
+                        onChange={() => handleAnswerChange(0, 'c')}
+                        />
+                        (C) Read a map or written instructions carefully?
+                    </label>                    
                 </div>
+
+                <div className = "sumbitQuiz">
+                    <button onClick={handleSubmit}>Submit</button>
+                </div>
+
             </div>
+            
         </div>
+
       </div>
     </div>
   );

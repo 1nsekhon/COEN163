@@ -4,12 +4,17 @@ import linkedIn from "../assets/linkedin_profile.png";
 import edit_profile from "../assets/edit_profile.png";
 import pastIcon from "../assets/pastIcon.png"
 
-const Profile = () => {
-  const [visual, setVisual] = useState(60);
-  const [reading, setReading] = useState(25);
-  const [auditory, setAuditory] = useState(15);
-  const [username, setUsername] = useState("LUCAS VORON");
-  const [email, setEmail] = useState("lvoron@scu.edu");
+const Profile = ({readingRes, visualRes, auditoryRes}) => {
+  console.log(readingRes);
+  console.log(visualRes);
+  console.log(auditoryRes);
+  
+    const [visual, setVisual] = useState(visualRes);
+    const [reading, setReading] = useState(readingRes);
+    const [auditory, setAuditory] = useState(auditoryRes);
+    const [username, setUsername] = useState("LUCAS VORON");
+    const [email, setEmail] = useState("lvoron@scu.edu");
+  
 
   useEffect(() => {
     console.log("visual has changed:", visual);
