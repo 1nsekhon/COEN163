@@ -8,7 +8,7 @@ import { useLocation } from 'react-router-dom';
 
 const Profile = () => {
   const location = useLocation();
-  const { readingRes, visualRes, auditoryRes } = location.state;
+  const { readingRes, visualRes, auditoryRes } = location.state || {};
 
   console.log(readingRes);
   console.log(visualRes);
@@ -53,7 +53,7 @@ const Profile = () => {
                     type="range"
                     min="0"
                     max="100"
-                    defaultValue="60"
+                    defaultValue={visual}
                     className="slider"
                     id="myRange"
                     step="1"
@@ -74,7 +74,7 @@ const Profile = () => {
                       type="range"
                       min="0"
                       max="100"
-                      defaultValue="25"
+                      defaultValue={reading}
                       className="slider"
                       id="myRange"
                       step="1"
@@ -91,7 +91,7 @@ const Profile = () => {
                       type="range"
                       min="0"
                       max="100"
-                      defaultValue="15"
+                      defaultValue={auditory}
                       className="slider"
                       id="myRange"
                       step="1"

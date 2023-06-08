@@ -64,8 +64,8 @@ const Quiz = () => {
         <h1>Learning Style Assesment</h1>
         <h3>Answer the five questions below to determine whether you have a visual, auditory, or reading/writing learning style.</h3>
         </div>
-        <div className="landing-middle-content">
-            <div className="landing-bottom-text">
+        <div className="quiz-middle-content">
+            <div className="quiz-bottom-text">
                 <div className="quizQuestion">
                     1. When learning a new concept, do you prefer to:
                 </div>
@@ -226,15 +226,11 @@ const Quiz = () => {
                         (C) Read a map or written instructions carefully?
                     </label>                    
                 </div>
-
-                <div className = "sumbitQuiz">
-                    <button onClick={handleSubmit}>Submit</button>
-                </div>
-
             </div>
-            
+            <div className = "submitQuiz">
+                <button onClick={handleSubmit} className="smContent">Submit</button>
+            </div>
         </div>
-
       </div>
     </div>
   );
